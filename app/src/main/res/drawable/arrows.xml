@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+    <group
+        android:name="arrows"
+        android:pivotX="50"
+        android:pivotY="50">
+        <!-- 如果指定属性为 pathData，
+             则要添加一个属性 android:strokeLineCap="pathType",
+             来告诉系统进行pathData变换-->
+        <path
+            android:name="path1"
+            android:pathData="@string/arrows_path1"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="10" />
+        <path
+            android:name="path2"
+            android:pathData="@string/arrows_path2"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="10" />
+        <path
+            android:name="path3"
+            android:pathData="@string/arrows_path3"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="10" />
+    </group>
+</vector>

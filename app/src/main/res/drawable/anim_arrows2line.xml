@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/arrows">
+
+    <target
+        android:name="arrows"
+        android:animation="@animator/arrows2line_rotate">
+    </target>
+
+    <target
+        android:name="path1"
+        android:animation="@animator/arrows2line_path1">
+    </target>
+
+    <target
+        android:name="path3"
+        android:animation="@animator/arrows2line_path3">
+    </target>
+
+</animated-vector>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="network_chat_primary">#373b3e</color>
+    <color name="network_chat_primary_dark">#373b3e</color>
+    <color name="network_chat_blank">#424242</color>
+    <color name="network_chat_accent">#3F51B5</color>
+
+    <color name="text_light">@android:color/white</color>
+    <color name="text_dark">#8d8d8d</color>
+
+    <color name="light_grey">#E0E0E0</color>
+</resources>

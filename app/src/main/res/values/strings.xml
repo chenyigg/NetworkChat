@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Network Chat</string>
+    <string name="action_search">查询</string>
+    <string name="action_user">用户</string>
+    <string name="path_back">M3,12.6l8,-8M4,13L20,13M3,13.4l8,8</string>
+    <string name="path_list">M3,9L20,9M3,13L20,13M3,17L20,17</string>
+    <string name="arrows_path1">M 20,50 L 50,80 50,80</string>
+    <string name="arrows_path3">M 20,50 L 50,20 50,20</string>
+    <string name="arrows_path2">M 20,50 L 50,50 80,50</string>
+    <string name="line_path1">M 20,75 L 50,75 80,75</string>
+    <string name="line_path2">M 20,50 L 50,50 80,50</string>
+    <string name="line_path3">M 20,25 L 50,25 80,25</string>
+</resources>
