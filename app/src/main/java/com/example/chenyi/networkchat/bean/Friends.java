@@ -55,11 +55,11 @@ public class Friends implements Parcelable {
         users = new ArrayList<>();
     }
 
-    public void newFriend(String ip) {
-        User newUser = new User();
-        newUser.setIp(ip);
-        users.add(newUser);
-    }
+//    public void newFriend(String ip) {
+//        User newUser = new User();
+//        newUser.setIp(ip);
+//        users.add(newUser);
+//    }
 
     public void newFriend(User user) {
         deleteFriend(user.getIp());
