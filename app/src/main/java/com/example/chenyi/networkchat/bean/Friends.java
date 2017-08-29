@@ -17,7 +17,7 @@ public class Friends implements Parcelable {
 
     private List<User> users;
 
-    protected Friends(Parcel in) {
+    private Friends(Parcel in) {
         users = in.createTypedArrayList(User.CREATOR);
     }
 
