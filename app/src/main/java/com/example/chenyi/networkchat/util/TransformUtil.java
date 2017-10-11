@@ -106,22 +106,22 @@ public class TransformUtil {
         return path;
     }
 
-    public static Uri path2MediaUri(String path) {
-        Uri mediaUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-        Cursor cursor = MyApplication.getInstance().getContentResolver().query(mediaUri,
-                null,
-                MediaStore.Images.Media.DISPLAY_NAME + "= ?",
-                new String[] {path.substring(path.lastIndexOf("/") + 1)},
-                null);
-
-        Uri uri = null;
-        if(cursor.moveToFirst()) {
-            uri = ContentUris.withAppendedId(mediaUri,
-                    cursor.getLong(cursor.getColumnIndex(MediaStore.Images.Media._ID)));
-        }
-        cursor.close();
-        return uri;
-    }
+//    public static Uri path2MediaUri(String path) {
+//        Uri mediaUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+//        Cursor cursor = MyApplication.getInstance().getContentResolver().query(mediaUri,
+//                null,
+//                MediaStore.Images.Media.DISPLAY_NAME + "= ?",
+//                new String[] {path.substring(path.lastIndexOf("/") + 1)},
+//                null);
+//
+//        Uri uri = null;
+//        if(cursor.moveToFirst()) {
+//            uri = ContentUris.withAppendedId(mediaUri,
+//                    cursor.getLong(cursor.getColumnIndex(MediaStore.Images.Media._ID)));
+//        }
+//        cursor.close();
+//        return uri;
+//    }
 
     public static Uri path2FileUri(String path) {
         File picPath = new File(path);
