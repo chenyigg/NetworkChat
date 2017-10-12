@@ -14,10 +14,11 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.signature.StringSignature;
 import com.example.chenyi.networkchat.R;
 import com.example.chenyi.networkchat.bean.User;
 import com.example.chenyi.networkchat.util.GildeUtil;
-import com.example.chenyi.networkchat.util.TimeUtil;
+import com.example.chenyi.networkchat.util.MyBlurTransformation;
 import com.example.chenyi.networkchat.util.ToastUtil;
 
 import java.io.BufferedOutputStream;
@@ -43,6 +44,7 @@ public class PersonActivity extends AppCompatActivity {
 
     private boolean change = false;
     private User user;
+    private int version = 0;
     private int revisability = 0;
 
     @BindView(R.id.background)
@@ -140,13 +142,14 @@ public class PersonActivity extends AppCompatActivity {
         switch (requestCode) {
             case SELECT_PHOTOS_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
+                    version++;
                     Uri uri = data.getData();
                     if (uri != null) {
                         // 将图片设置到头像中
                         Glide.with(this)
                                 .load(uri)
                                 .asBitmap()
-                                .into(new SimpleTarget<Bitmap>(250, 250) {
+                                .into(new SimpleTarget<Bitmap>(200, 200) {
                                     @Override
                                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                                         saveHeadPic(resource);
@@ -182,11 +185,19 @@ public class PersonActivity extends AppCompatActivity {
         if (!dir.exists()) {
             dir.mkdirs();
         }
-        String filePath = path + "me_"+ TimeUtil.getCurrentTime() +".jpg";
+        String filePath = path + "me_"/*+ TimeUtil.getCurrentTime()*/ +".jpg";
         saveImage(bitmap, filePath);
         user.setPic(filePath);
-        GildeUtil.setBlurPicture(background, filePath);
-        pic.setImageBitmap(bitmap);
+        Glide.with(this)
+                .load(filePath)
+                .signature(new StringSignature(filePath + version))
+                .into(pic);
+        Glide.with(this)
+                .load(filePath)
+                .bitmapTransform(new MyBlurTransformation(this))
+                .error(R.color.network_chat_primary)
+                .crossFade(500)
+                .into(background);
     }
 
     /**
